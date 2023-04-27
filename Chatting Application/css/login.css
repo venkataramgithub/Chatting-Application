@@ -1,0 +1,79 @@
+*{
+   margin: none;
+   padding: none;
+   font-family: sans-serif;
+}
+.container{
+   height: 550px;
+   width: 100%;
+}
+.container .header img{
+    width: 120px;
+    height: 120px;
+    margin-top: -25px;
+    border-radius: 10px;
+    background-color:#f3f3f3;
+}
+.container .header p{
+   color:green;
+   margin-top:-30px;
+   margin-left:15px;
+   font-size: 20px;
+}
+.container .header p span{
+   color:rgba(0, 0,250,.8);
+}
+.register{
+   background-color: #eeeeff;
+   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+   padding:10px;
+   margin:5px 500px;
+   border-radius: 5px;
+}
+.register p{
+   border-bottom: 1px solid rgba(0,0,0,0.2);
+   font-size: 18px;
+   margin-bottom:20px;
+}
+form .form-group{
+   margin:5px 5px;
+   padding:3px;
+   display: flex;
+   flex-direction: column;
+}
+form .form-group label{
+   margin-bottom: 5px;
+   font-size: 17px;
+}
+form .form-group input{
+   border-radius: 5px;
+   border:1px solid rgba(0, 0, 0, .2);
+   outline: none;
+   font-size: 14px;
+   padding:2px 4px;
+}
+form .form-group p{
+   border: none;
+   margin-top:0px;
+   font-size: 16px;
+}
+form button{
+   margin:10px 0px;
+   width:100%;
+   background-color: palegreen;
+   color:black;
+   font-size: 19px;
+   padding: 3px 5px;
+   outline: none;
+   border-radius: 4px;
+   text-align: center;
+   cursor: pointer;
+   border:1px solid rgba(0, 0, 0, .2);
+}
+form span{
+   font-size: 16px;
+   align-items: center;
+   text-align: center;
+   margin-bottom: 10px;
+
+}

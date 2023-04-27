@@ -1,0 +1,128 @@
+*{
+   margin: none;
+   padding: none;
+   font-family: sans-serif;
+}
+.container{
+   height: 550px;
+   width: 100%;
+}
+.container .header img{
+    width: 120px;
+    height: 120px;
+    margin-top: -25px;
+    border-radius: 10px;
+    background-color:#f3f3f3;
+}
+.container .header p{
+   color:green;
+   margin-top:-30px;
+   margin-left:15px;
+   font-size: 20px;
+}
+.container .header p span{
+   color:rgba(0, 0,250,.8);
+}
+.chat-home{
+   background-color: #eeeeff;
+   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+   margin:5px 430px;
+   border-radius: 5px;
+   margin-top: -50px;
+}
+.chat-home .chat-head{
+   background-color:darkcyan;
+   display: flex;
+   flex-direction: row;
+   height: 80px;
+}
+.chat-home .chat-head i{
+   margin:30px 5px;
+   color: white;
+   font-size: 18px;
+}
+.chat-home .chat-head img{
+   width:75px;
+   margin:5px 2px;
+   height: 75px;
+   border-radius:50%;
+}
+.chat-home .chat-head .name-details{
+   display: block;
+   padding:3px;
+   margin-top: 8px;
+   margin-left: 10px;
+}
+.chat-home .chat-head .name-details p{
+   font-size: 20px;
+   margin:5px;
+   color:white;
+}
+.chat-home .chat-head .name-details span{
+   margin:5px;
+   color: white;
+   font-size: 17px;
+}
+.chat-home .chat-head button{
+   outline: none;
+   border:1px solid rgba(0, 0, 0, .2);
+   border-radius: 5px;
+   padding:3px 5px;
+   font-size: 17px;
+   height: 27px;
+   margin:30px 0px;
+   margin-left: 120px;
+   color:white;
+   background-color:orange;
+}
+.chat-home .chat-box{
+   height: 430px;
+   padding:4px;
+   background-color: #fff;
+   overflow-y: auto;
+}
+.chat-home .chat-box::-webkit-scrollbar{
+   width:2px;
+}
+.chat-home .chat-box .sender-msg{
+   float:right;
+   width:50%;
+   border-top-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+   color:black;
+   padding:0px 3px;
+   background-color:#ddd;
+   margin:5px;
+}
+.chat-home .chat-box .receiver-msg{
+   float:left;
+   width:50%;
+   padding:0px 3px;
+   border-top-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   color:white;
+   background-color:#555;
+   margin:5px;
+}
+.chat-home .chat-box .sender-msg p,.chat-home .chat-box .receiver-msg p{
+   word-wrap: break-word;
+}
+.chat-home .message-box{
+   padding: 2px;
+}
+.chat-home .message-box input{
+   width:91%;
+   height: 25px;
+   padding:3px;
+   font-size: 18px;
+   outline: none;
+   border:1px solid rgba(0, 0, 0, .2);
+}
+.chat-home .message-box button{
+   font-size: 18px;
+   background-color: green;
+   outline: none;
+   padding:5px;
+   color: white;
+   border:1px solid rgba(0, 0, 0, .2);
+}
