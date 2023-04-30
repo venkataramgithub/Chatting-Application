@@ -1,18 +1,25 @@
 *{
-   margin: none;
-   padding: none;
+   margin:0px;
+   padding:0px;
    font-family: sans-serif;
 }
 .container{
    height: 550px;
    width: 100%;
+   background-color:#f5f5f5;
+   padding: 10px;
+}
+.container .header{
+   display: block;
+   width: 150px;
+   align-items: center;
+   margin:0px 600px;
 }
 .container .header img{
     width: 120px;
-    height: 120px;
-    margin-top: -25px;
+    height: 90px;
     border-radius: 10px;
-    background-color:#f3f3f3;
+    background-color: #fff;
 }
 .container .header p{
    color:green;
@@ -24,32 +31,51 @@
    color:rgba(0, 0,250,.8);
 }
 .register{
-   background-color: #eeeeff;
-   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+   background-color: #fff;
+   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .1);
    padding:10px;
-   margin:5px 500px;
+   margin:5px 400px;
+   border-radius: 5px;
 }
 .register p{
    border-bottom: 1px solid rgba(0,0,0,0.2);
-   font-size: 18px;
-   margin-bottom: 10px;
+   font-size:20px;
+   text-align: center;
+   margin-bottom:10px;
+}
+form .name-group{
+   display: flex;
+   flex-direction:row;
+   margin:5px;
+   justify-content: space-between;
+}
+form .name-group .form-group{
+   width:250px;
 }
 form .form-group{
-   margin:5px 5px;
-   padding:3px;
    display: flex;
+   margin:8px;
    flex-direction: column;
 }
 form .form-group label{
-   margin-bottom: 5px;
+   margin-bottom:5px;
    font-size: 17px;
 }
 form .form-group input{
    border-radius: 5px;
    border:1px solid rgba(0, 0, 0, .2);
    outline: none;
+   height: 20px;
    font-size: 14px;
-   padding:2px 4px;
+   padding:5px;
+}
+form .form-group select{
+   border-radius: 5px;
+   border:1px solid rgba(0, 0, 0, .2);
+   outline: none;
+   height: 30px;
+   font-size: 14px;
+   padding:5px;
 }
 form button{
    margin:10px 0px;
@@ -59,13 +85,25 @@ form button{
    font-size: 19px;
    padding: 3px 5px;
    outline: none;
+   border-radius: 4px;
+   text-align: center;
    cursor: pointer;
    border:1px solid rgba(0, 0, 0, .2);
 }
-form span{
-   font-size: 16px;
-   align-items: center;
-   text-align: center;
-   margin-bottom: 10px;
-
+.message{
+   display: block;
+   position: absolute;
+   width:450px;
+   height: 25px;
+   margin:10px 400px;
+   padding:20px ;
+   color:white;
+   background-color: green;
+   box-shadow:0px 0xp 2px 2px rgba(0, 0, 0, .2);
+}
+.message span{
+   float:right;
+   font-size: 25px;
+   margin:5px;
+   cursor: pointer;
 }
