@@ -29,13 +29,45 @@
 	<title>RChat Application</title>
 	<link rel="stylesheet" href="./css/chathome.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<script type="text/javascript">
+		function getuser(event){
+			if(event.target.value){
+				let form=document.getElementById("searchuser");
+				let xhr=new XMLHttpRequest();
+				xhr.open("post","getuser.php",true);
+				xhr.onload=()=>{
+					let chatuser=document.getElementById("chat-users");
+					if(xhr.response){
+						chatuser.innerHTML=xhr.response;
+						console.log(xhr.response);
+					}
+					else{
+						chatuser.innerHTML="No User Found";
+					}
+					
+				}
+				let formdata=new FormData(form);
+				xhr.send(formdata);
+			}
+			else{
+				let chatuser=document.getElementById("chat-users");
+				chatuser.innerText="NO user exist";
+				setTimeout(()=>{
+					let xhr=new XMLHttpRequest();
+					xhr.open("get","getallusers.php",true);
+					xhr.onload=()=>{
+						let chatuser=document.getElementById("chat-users");
+						chatuser.innerHTML=xhr.response;
+					}
+					xhr.send();
+
+				},1000);
+			}
+		}
+	</script>
 </head>
 <body>
 	<section class="container">
-		<div class="header">
-			<img src="./css/ramlogo.png" alt="logo">
-			<p>RChat<span>App</span></p>
-		</div>
 		<div class="chat-home">
 			<div class="chat-head">
 				<?php
@@ -46,52 +78,22 @@
 				</div>'?>
 				<form method="post" action=""><button name="logout">Logout</button></form>
 			</div>
-			<form method="post" action="" class="search-user" enctype="multipart/form-data">
-				<input type="search" name="search" placeholder="Search here to start chat"><button name="search-btn"><i class="fas fa-search"></i></button>
+			<form method="post" id="searchuser" class="search-user" enctype="multipart/form-data">
+				<input type="search" name="username" placeholder="Search here to start chat" onkeyup="getuser(event)"><button name="search-btn"><i class="fas fa-search"></i></button>
 			</form>
-			<div class="chat-users">
-			<?php
-				if(isset($_POST['search-btn'])){
-					$search=mysqli_real_escape_string($conn,$_POST['search']);
-
-					$sql=mysqli_query($conn,"select * from registration where fname='$search' or lname='$search'");
-					if(mysqli_num_rows($sql)>0){
-						while($fetch=mysqli_fetch_assoc($sql)){
-							$sender=$fetch['sl'];
-							$sql1=mysqli_query($conn,"select * from message where sender='$sender'");
-							if(mysqli_num_rows($sql1)){
-								$fetch1=mysqli_fetch_assoc($sql1);
-							}
-							echo '<div><a href="chatarea.php?userid='.$fetch['sl'].'"><img src="./uploads/'.$fetch['image'].'" alt="logo image">
-										<div class="details">
-											<p>'.$fetch['fname'].' '.$fetch['lname'].'</p>
-											<span>'.$fetch1['message'].'</span>
-										</div><h6>'.$fetch['time'].'</h6><i class="fas fa-circle"></i>
-										</a></div>';	
-						}
-					}
-				}
-				else{
-					$sql=mysqli_query($conn,"select * from registration where sl!='$userid'");
-					if(mysqli_num_rows($sql)>0){
-						while($fetch=mysqli_fetch_assoc($sql)){
-							$sender=$fetch['sl'];
-							$sql1=mysqli_query($conn,"select * from message where sender='$sender'");
-							if(mysqli_num_rows($sql1)){
-								$fetch2=mysqli_fetch_assoc($sql1);
-							}
-							echo '<div><a href="chatarea.php?userid='.$fetch['sl'].'"><img src="./uploads/'.$fetch['image'].'" alt="logo image">
-										<div class="details">
-											<p>'.$fetch['fname'].' '.$fetch['lname'].'</p>
-											<span>'.$fetch2['message'].'</span>
-										</div><h6>'.$fetch['time'].'</h6><i class="fas fa-circle"></i>
-										</a></div>';	
-						}
-					}
-				}
-			?>
+			<div class="chat-users" id="chat-users">
+			
 			</div>
 		</div>
 	</section>
+	<script>
+		let xhr=new XMLHttpRequest();
+		xhr.open("get","getallusers.php",true);
+		xhr.onload=()=>{
+			let chatuser=document.getElementById("chat-users");
+			chatuser.innerHTML=xhr.response;
+		}
+		xhr.send();
+	</script>
 </body>
 </html>	

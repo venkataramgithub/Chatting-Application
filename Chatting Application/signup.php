@@ -43,10 +43,6 @@
 		}
 	?>
 	<section class="container">
-		<div class="header">
-			<img src="./css/ramlogo.png" alt="logo">
-			<p>RChat<span>App</span></p>
-		</div>
 		<div class="register">
 			<p>RChat SignUp</p>
 			<form method="post" action="" enctype="multipart/form-data">
@@ -86,7 +82,7 @@
 					<input type="file" name="image" required>
 				</div>
 				<button name="submit">SignUp</button>
-				<span style="margin-left:150px;">Already signed up?<a href="login.php">login now</a></span>
+				<h2 style="margin-left:150px;">Already signed up?<a href="login.php">login now</a></h2>
 			</form>
 		</div>
 	</section>

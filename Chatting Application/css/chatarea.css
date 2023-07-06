@@ -4,125 +4,107 @@
    font-family: sans-serif;
 }
 .container{
-   height: 550px;
+   background:lightcyan;
    width: 100%;
-}
-.container .header img{
-    width: 120px;
-    height: 120px;
-    margin-top: -25px;
-    border-radius: 10px;
-    background-color:#f3f3f3;
-}
-.container .header p{
-   color:green;
-   margin-top:-30px;
-   margin-left:15px;
-   font-size: 20px;
-}
-.container .header p span{
-   color:rgba(0, 0,250,.8);
+   margin:0px;
+   height: 109vh;
+   align-items: center;
+   justify-content: center;
+   padding: 50px;
 }
 .chat-home{
-   background-color: #eeeeff;
-   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
-   margin:5px 430px;
-   border-radius: 5px;
-   margin-top: -50px;
+   background:white;
+   width:450px;
+   height:580px;
+   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0,.5);
 }
 .chat-home .chat-head{
-   background-color:darkcyan;
    display: flex;
    flex-direction: row;
-   height: 80px;
+   padding:3px;
+   height: 70px;
+   border-bottom:1px solid rgba(0, 0, 0,.1);
 }
 .chat-home .chat-head i{
-   margin:30px 5px;
-   color: white;
-   font-size: 18px;
+   font-size:20px;
+   text-align: center;
+   margin:0px 20px;
+   margin-top:25px;
+
 }
 .chat-home .chat-head img{
-   width:75px;
-   margin:5px 2px;
-   height: 75px;
-   border-radius:50%;
+   width:70px;
+   height:70px;
+   border-radius: 50%;
+   object-fit: cover;
 }
 .chat-home .chat-head .name-details{
-   display: block;
-   padding:3px;
-   margin-top: 8px;
-   margin-left: 10px;
+   display: flex;
+   margin-left:20px;
+   flex-direction: column;
+   align-items:left;
 }
 .chat-home .chat-head .name-details p{
-   font-size: 20px;
-   margin:5px;
-   color:white;
+   font-size: 23px;
+   font-family: serif;
+   margin-top:10px;
 }
 .chat-home .chat-head .name-details span{
-   margin:5px;
-   color: white;
+   margin-top: -15px;
    font-size: 17px;
 }
-.chat-home .chat-head button{
-   outline: none;
-   border:1px solid rgba(0, 0, 0, .2);
-   border-radius: 5px;
-   padding:3px 5px;
-   font-size: 17px;
-   height: 27px;
-   margin:30px 0px;
-   margin-left: 120px;
-   color:white;
-   background-color:orange;
-}
+
 .chat-home .chat-box{
-   height: 430px;
-   padding:4px;
-   background-color: #fff;
-   overflow-y: auto;
+   padding:10px;
+   height:450px;
+   overflow-y: scroll;
+   background: url("../uploads/chat.jpg");
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   flex-direction: column;
 }
 .chat-home .chat-box::-webkit-scrollbar{
-   width:2px;
+   width:3px;
+   color:orange;
 }
 .chat-home .chat-box .sender-msg{
-   float:right;
-   width:50%;
-   border-top-right-radius: 10px;
-   border-bottom-left-radius: 10px;
+   background:white;
    color:black;
-   padding:0px 3px;
-   background-color:#ddd;
-   margin:5px;
+   margin-left:200px;
+   max-width: 250px;
+   height: fit-content;
+   float:right;
+   padding: 5px;
+   border-bottom-right-radius:10px;
+   border-top-left-radius:10px;
+   margin-bottom: 10px;
+   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0,.1);
 }
 .chat-home .chat-box .receiver-msg{
-   float:left;
-   width:50%;
-   padding:0px 3px;
-   border-top-left-radius: 10px;
-   border-bottom-right-radius: 10px;
+   background:rgba(0,0,0,0.6);
    color:white;
-   background-color:#555;
-   margin:5px;
-}
-.chat-home .chat-box .sender-msg p,.chat-home .chat-box .receiver-msg p{
-   word-wrap: break-word;
+   max-width:250px;
+   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0,.1);
+   height: fit-content;
+   border-top-left-radius:10px;
+   border-bottom-right-radius:10px;
+   padding:5px;
+   margin-bottom: 10px;
 }
 .chat-home .message-box{
-   padding: 2px;
+   display:flex;
+   flex-direction: row;
 }
 .chat-home .message-box input{
-   width:91%;
-   height: 25px;
-   padding:3px;
-   font-size: 18px;
-   outline: none;
-   border:1px solid rgba(0, 0, 0, .2);
+   height: 20px;
+   padding:5px;
+   font-size:18px;
+   width:88%;
 }
 .chat-home .message-box button{
-   font-size: 18px;
-   background-color: green;
-   outline: none;
-   padding:5px;
-   color: white;
-   border:1px solid rgba(0, 0, 0, .2);
+   width:fit-content;
+   height:33px;
+   padding:0px 8px;
+   font-size: 20px;
 }

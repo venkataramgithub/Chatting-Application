@@ -1,24 +1,6 @@
 <?php
 	include_once('config.php');
 	session_start();
-	if(isset($_POST['submit'])){
-		$email=mysqli_real_escape_string($conn,$_POST['email']);
-		$password=mysqli_real_escape_string($conn,$_POST['password']);
-
-		$select=mysqli_query($conn,"select * from registration where email='$email' and password='$password'");
-		if(mysqli_num_rows($select)>0){
-			$row=mysqli_query($conn,"update registration set status='Active' where email='$email'");
-			if($row){
-				$result=mysqli_fetch_assoc($select);
-				$_SESSION['userid']=$result['sl'];
-				header('location:chathome.php');
-			}
-			else{
-				echo 'status not updated';
-			}
-			
-		}
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,6 +31,12 @@
 			}
 
 		}
+		function refreshform(){
+			let form=document.getElementById("form");
+			if(form.submit()){
+				form.reset();
+			}
+		}
 	</script>
 </head>
 <body>
@@ -66,23 +54,24 @@
 				header('location:chathome.php');
 			}
 			else{
-				echo '<div class="message" id="message">Status Not updated<span onclick="messagehide()">&times;</span></div>';
+				$message="Status Not updated";
 			}
 			
 		}
 		else{
-			echo '<div class="message" id="message">Entered details are incorrect<span onclick="messagehide()">&times;</span></div>';
+			$message="Entered details are incorrect";
 		}
 	}
 	?>
 	<section class="container">
-		<div class="header">
-			<img src="./css/ramlogo.png" alt="logo">
-			<p>RChat<span>App</span></p>
-		</div>
 		<div class="register">
-			<p>RChat Login</p>
-			<form method="post" action="" enctype="multipart/form-data">
+			<p>Login</p>
+			<?php
+				if(isset($message)){
+					echo '<h4 style="color:red;margin:5px 0px;text-align:center;">'.$message.'</h4>';
+				}
+			?>
+			<form method="post" action="" enctype="multipart/form-data" id="form">
 				<div class="form-group">
 					<label>Enter Email</label>
 					<input type="email" name="email" placeholder="Enter Your Email" required>
@@ -92,8 +81,8 @@
 					<input type="password" name="password" id="password" placeholder="Enter Your Password" required>
 					<span id="eyeopen" onclick="showpassword()"><i class="fas fa-eye"></i></span><span id="eyeclose" onclick="showpassword()"><i class="fas fa-eye-slash"></i></span>
 				</div>
-				<button name="submit">Login</button>
-				<span style="margin-left:100px;">Don't hava an account?<a href="signup.php">signup now</a></span>
+				<button name="submit" onclick="refreshform()">Login</button>
+				<h2>Don't hava an account?<a href="signup.php">signup now</a></h2>
 			</form>
 		</div>
 	</section>

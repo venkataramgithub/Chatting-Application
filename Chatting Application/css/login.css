@@ -4,104 +4,85 @@
    font-family: sans-serif;
 }
 .container{
-   height: 550px;
+   background:lightcyan;
    width: 100%;
-   background-color:#f5f5f5;
-   padding: 10px;
-}
-.container .header{
-   display: block;
-   width: 150px;
+   height: 109vh;
+   margin: 0px;
    align-items: center;
-   margin:0px 600px;
-}
-.container .header img{
-    width: 120px;
-    height: 90px;
-    border-radius: 10px;
-    background-color: #fff;
-}
-.container .header p{
-   color:green;
-   margin-top:-30px;
-   margin-left:15px;
-   font-size: 20px;
-}
-.container .header p span{
-   color:rgba(0, 0,250,.8);
+   justify-content: center;
+   padding: 50px;
 }
 .register{
-   background-color: #fff;
-   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .1);
-   padding:10px;
-   margin:5px 400px;
-   height: 350px;
-   border-radius: 5px;
-}
-.register p{
-   border-bottom: 1px solid rgba(0,0,0,0.2);
-   font-size:20px;
-   text-align: center;
-   margin-bottom:20px;
-}
-form .form-group{
-   margin:20px 10px;
-   padding:5px;
+   justify-content: center;
+   align-items: center;
+   margin-top: 50px;
+   width:min(100%,430px);
    display: flex;
    flex-direction: column;
+   justify-items: center;
+   background: white;
+   padding:10px 0px;
+   margin-left:30%;
+   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0,.5);
+}
+.register p{
+   font-size: 23px;
+   text-align: center;
+   border-bottom: 2px dotted rgba(0, 0, 0, .4);
+   margin:0px 20px;
+   width:90%;
+}
+form .form-group{
+  display: flex;
+  flex-direction: column;
+  margin:20px 0px;
+  margin-right:20px;
+  width:350px;
 }
 form .form-group label{
-   margin-bottom: 8px;
-   font-size: 17px;
+   font-size: 18px;
+   color: rgba(0, 0, 0,.7);
+   margin-bottom: 5px;
 }
 form .form-group input{
-   border-radius: 5px;
-   border:1px solid rgba(0, 0, 0, .2);
-   outline: none;
-   height: 20px;
-   font-size: 14px;
-   padding:10px;
+  height: 20px;
+  padding:10px;
+  font-size: 17px;
+  width:100%;
+  border: 1px solid rgba(0, 0, 0,.3);
+  outline: none;
+}
+::placeholder{
+   color: rgba(0, 0, 0,.5);
 }
 form button{
-   margin:10px 0px;
    width:100%;
-   background-color: palegreen;
-   color:black;
-   font-size: 19px;
-   padding: 3px 5px;
+   justify-items: center;
+   border:1px solid rgba(0, 0, 0,.2);
    outline: none;
-   border-radius: 4px;
-   text-align: center;
-   cursor: pointer;
-   border:1px solid rgba(0, 0, 0, .2);
+   font-size: 18px;
+   color: white;
+   cursor:pointer;
+   background: pink;
+   padding:10px;
 }
 form .form-group span{
-   font-size: 16px;
-   position:relative;
+   
 }
 form .form-group span i{
-   float: right;
-   font-size: 16px;
-   margin-top:-30px;
-   margin-right:10px;
+   
 }
 form .form-group #eyeopen{
-   display: none;
+  
 }
-.message{
-   display: block;
-   position: absolute;
-   width:450px;
-   height: 25px;
-   margin:10px 400px;
-   padding:20px ;
-   color:white;
-   background-color: green;
-   box-shadow:0px 0xp 2px 2px rgba(0, 0, 0, .2);
+h2,h2 a{
+   font-size: 16px;
+   margin-top: 10px;
+   font-family:serif;
+   font-style: italic;
+   font-weight: normal;
+   margin-bottom: 15px;
 }
-.message span{
-   float:right;
-   font-size: 25px;
-   margin:5px;
-   cursor: pointer;
+h2 a{
+   color: blue;
 }
